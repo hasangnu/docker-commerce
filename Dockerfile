@@ -58,7 +58,7 @@ RUN { \
         echo 'memory_limit=-1'; \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 
-COPY --from=composer:1.10 /usr/bin/composer /usr/local/bin/
+COPY --from=composer /usr/bin/composer /usr/local/bin/
 
 WORKDIR /opt/drupal
 
