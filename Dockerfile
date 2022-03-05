@@ -63,8 +63,13 @@ RUN { \
 	echo 'opcache.max_accelerated_files=4000'; \
 	echo 'opcache.revalidate_freq=60'; \
 	echo 'opcache.fast_shutdown=1'; \
-        echo 'memory_limit=-1'; \
+	echo 'memory_limit=-1'; \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
+
+RUN { \
+	echo 'upload_max_filesize = 10M'; \
+	echo 'post_max_size = 10M'; \
+	} > /usr/local/etc/php/conf.d/upload-recommended.ini
 
 RUN a2enmod ssl
 
