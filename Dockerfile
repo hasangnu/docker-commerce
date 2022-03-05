@@ -1,3 +1,5 @@
+# hasangnu/docker-commerce php-7.4
+
 FROM php:7.4-apache-buster
 
 RUN set -eux; \
@@ -47,6 +49,8 @@ RUN set -eux; \
 RUN apt-get update && apt-get install -y \
 	git \
 	nano \
+	unzip \
+	wget \
 	libxrender1 \
 	libfontconfig1 \
 	libxext6 \
